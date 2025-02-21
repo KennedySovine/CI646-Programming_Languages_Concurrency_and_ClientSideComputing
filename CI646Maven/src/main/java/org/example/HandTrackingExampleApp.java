@@ -32,6 +32,10 @@ public class HandTrackingExampleApp extends GameApplication {
     protected void initInput() {
         FXGL.onKeyDown(KeyCode.F, "Border Set", () -> {
             //System.out.println(FXGL.getService(HandTrackingService.class).getVideoDevices());
+            List<VideoInputDeviceInfo> devices = FXGL.getService(HandTrackingService.class).getVideoDevices();
+            System.out.println(devices);
+            FXGL.getService(HandTrackingService.class).setVideoDevice(devices.get(1));
+
         });
     }
 
